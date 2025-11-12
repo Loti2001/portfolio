@@ -1,3 +1,4 @@
+/* Reset and base styles */
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
@@ -5,16 +6,24 @@ body {
   color: #f0f0f0;
 }
 
-.container {
-  display: flex;
-  height: 100vh;
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
+/* Layout */
+.container {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* Sidebar */
 .sidebar {
   width: 250px;
   background-color: #1f1f1f;
   padding: 20px;
   text-align: center;
+  flex-shrink: 0;
 }
 
 .avatar {
@@ -26,6 +35,7 @@ body {
 .sidebar h1 {
   margin: 10px 0;
   font-size: 24px;
+  color: #00bcd4;
 }
 
 nav ul {
@@ -38,15 +48,16 @@ nav li {
 }
 
 nav a {
-  color: #f0f0f0;
-  text-decoration: none;
   font-weight: bold;
+  color: #f0f0f0;
+  transition: color 0.3s ease;
 }
 
 nav a:hover {
   color: #00bcd4;
 }
 
+/* Main content */
 .content {
   flex: 1;
   padding: 40px;
@@ -59,4 +70,86 @@ section {
 
 h2 {
   color: #00bcd4;
+  margin-bottom: 20px;
+}
+
+/* Projects */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.project-card {
+  background-color: #2a2a2a;
+  padding: 20px;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+}
+
+.project-card h3 {
+  margin-top: 0;
+  color: #00bcd4;
+}
+
+.project-card a {
+  color: #00bcd4;
+  text-decoration: underline;
+}
+
+/* Skills */
+.skills-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.skill span {
+  font-weight: bold;
+}
+
+.progress {
+  background-color: #2a2a2a;
+  border-radius: 5px;
+  height: 10px;
+  margin-top: 5px;
+}
+
+.bar {
+  height: 100%;
+  background-color: #00bcd4;
+  border-radius: 5px;
+}
+
+/* Contact Form */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+input, textarea {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #2a2a2a;
+  color: #f0f0f0;
+}
+
+button {
+  padding: 10px;
+  background-color: #00bcd4;
+  color: #121212;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+button:hover {
+  background-color: #0097a7;
 }
